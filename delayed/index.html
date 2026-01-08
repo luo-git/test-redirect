@@ -1,13 +1,16 @@
 <html>
   <head>
-    <title>Immediate redirect</title>
+    <title>Delayed redirect</title>
   </head>
   <body>
     <form id="testForm" method="POST" action="https://example.org/post">
       <input name="payload" value="payload" />
+      <button type="submit">Redirect now</button>
     </form>
     <script>
-      document.getElementById("testForm").submit();
+      setTimeout(function () {
+        document.getElementById("testForm").submit();
+      }, 3000);
     </script>
   </body>
 </html>
